@@ -12,7 +12,7 @@ class IntegerRange:
     def __get__(self, instance: "Visitor", owner: type) -> int:
         if instance is None:
             return self
-        getattr(instance, self.protected_name)
+        return getattr(instance, self.protected_name)
 
     def __set__(self, instance: "Visitor", value: int) -> None:
         if not isinstance(value, int):
